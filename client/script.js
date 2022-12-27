@@ -71,7 +71,7 @@ const handleSubmit = async (e) => {
   const messageDiv = document.getElementById(uniqueId);
 
   loader(messageDiv);
-
+try{
   const response = await fetch("https://smartai.onrender.com", {
     method: "POST",
     headers: {
@@ -95,6 +95,10 @@ const handleSubmit = async (e) => {
 
     messageDiv.innerHTML = "Something went wrong";
     alert(err);
+  }
+}
+  catch(e){
+    alert(e.message)
   }
 };
 
